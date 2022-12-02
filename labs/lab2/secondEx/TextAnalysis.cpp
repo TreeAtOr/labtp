@@ -27,14 +27,14 @@ bool TextAnalysis::isPunctuationMark(char c) {
 
 void TextAnalysis::readFromFile(const std::string &fileName) {
     if (!endsWith(fileName, ".txt")) {
-        throw std::runtime_error("Файл имеет неподдерживаемый тип, вводите имя файла с расширением .txt!\n");
+        throw std::runtime_error("Р¤Р°Р№Р» РёРјРµРµС‚ РЅРµРїРѕРґРґРµСЂР¶РёРІР°РµРјС‹Р№ С‚РёРї, РІРІРѕРґРёС‚Рµ РёРјСЏ С„Р°Р№Р»Р° СЃ СЂР°СЃС€РёСЂРµРЅРёРµРј .txt!\n");
     }
 
     std::fstream file;
     file.open(fileName, std::ios::in);
     if (!file.is_open()) {
         file.close();
-        throw std::runtime_error("Файл не открылся!\n");
+        throw std::runtime_error("Р¤Р°Р№Р» РЅРµ РѕС‚РєСЂС‹Р»СЃСЏ!\n");
     }
 
     std::string word;
@@ -59,10 +59,10 @@ void TextAnalysis::readFromFile(const std::string &fileName) {
     }
 
     if (counter == 0) {
-        std::cout << "\nНет слов, состоящих не более чем из 4 букв!\n\n";
+        std::cout << "\nРќРµС‚ СЃР»РѕРІ, СЃРѕСЃС‚РѕСЏС‰РёС… РЅРµ Р±РѕР»РµРµ С‡РµРј РёР· 4 Р±СѓРєРІ!\n\n";
     } else {
-        std::cout << "\nСлов, состоящих не более, чем из 4 букв: " << counter << "\n";
-        std::cout << "Эти слова: " << resultString << "\n\n";
+        std::cout << "\nРЎР»РѕРІ, СЃРѕСЃС‚РѕСЏС‰РёС… РЅРµ Р±РѕР»РµРµ, С‡РµРј РёР· 4 Р±СѓРєРІ: " << counter << "\n";
+        std::cout << "Р­С‚Рё СЃР»РѕРІР°: " << resultString << "\n\n";
     }
 
     file.close();

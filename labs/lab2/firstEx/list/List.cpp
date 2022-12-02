@@ -13,7 +13,7 @@ void List::addElementToBegin(Train *train) {
 
     first = newELement;
     ++size;
-    std::cout << "Поезд добавлен в начало списка, всего поездов: " << size << "\n\n";
+    std::cout << "РџРѕРµР·Рґ РґРѕР±Р°РІР»РµРЅ РІ РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°, РІСЃРµРіРѕ РїРѕРµР·РґРѕРІ: " << size << "\n\n";
 }
 
 void List::addElementToEnd(Train *train) {
@@ -28,12 +28,12 @@ void List::addElementToEnd(Train *train) {
     }
     last = newElement;
     ++size;
-    std::cout << "Поезд добавлен в конец списка, всего поездов: " << size << "\n\n";
+    std::cout << "РџРѕРµР·Рґ РґРѕР±Р°РІР»РµРЅ РІ РєРѕРЅРµС† СЃРїРёСЃРєР°, РІСЃРµРіРѕ РїРѕРµР·РґРѕРІ: " << size << "\n\n";
 }
 
 void List::displayList() {
     if (size == 0) {
-        throw std::runtime_error("Нет поездов в списке!\n");
+        throw std::runtime_error("РќРµС‚ РїРѕРµР·РґРѕРІ РІ СЃРїРёСЃРєРµ!\n");
     }
 
     bubbleSort();
@@ -68,7 +68,7 @@ bool List::isEmpty() const {
 
 void List::deleteElementFromBegin() {
     if (isEmpty()) {
-        throw std::runtime_error("Нет поездов в списке!\n");
+        throw std::runtime_error("РќРµС‚ РїРѕРµР·РґРѕРІ РІ СЃРїРёСЃРєРµ!\n");
     }
 
     Element *newFirstElement = first->next;
@@ -76,7 +76,7 @@ void List::deleteElementFromBegin() {
         newFirstElement->prev = nullptr;
     }
 
-    std::cout << "Поезд удален из начала списка!\n\n";
+    std::cout << "РџРѕРµР·Рґ СѓРґР°Р»РµРЅ РёР· РЅР°С‡Р°Р»Р° СЃРїРёСЃРєР°!\n\n";
     delete first;
     first = newFirstElement;
     --size;
@@ -84,7 +84,7 @@ void List::deleteElementFromBegin() {
 
 void List::deleteElementFromEnd() {
     if (isEmpty()) {
-        throw std::runtime_error("Нет поездов в списке!\n");
+        throw std::runtime_error("РќРµС‚ РїРѕРµР·РґРѕРІ РІ СЃРїРёСЃРєРµ!\n");
     }
 
     Element *prevElementBeforeLast = last->prev;
@@ -92,7 +92,7 @@ void List::deleteElementFromEnd() {
         prevElementBeforeLast->next = nullptr;
     }
 
-    std::cout << "Поезд удален из конца списка!\n\n";
+    std::cout << "РџРѕРµР·Рґ СѓРґР°Р»РµРЅ РёР· РєРѕРЅС†Р° СЃРїРёСЃРєР°!\n\n";
     delete last;
     last = prevElementBeforeLast;
     --size;
@@ -100,11 +100,11 @@ void List::deleteElementFromEnd() {
 
 void List::deleteElementByIndex(int index) {
     if (isEmpty()) {
-        throw std::runtime_error("Нет поездов в списке!\n");
+        throw std::runtime_error("РќРµС‚ РїРѕРµР·РґРѕРІ РІ СЃРїРёСЃРєРµ!\n");
     }
 
     if (isIndexIncorrect(index)) {
-        throw std::runtime_error("Введен некорректный индекс!\n");
+        throw std::runtime_error("Р’РІРµРґРµРЅ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РёРЅРґРµРєСЃ!\n");
     }
 
     if (index == 0) {
@@ -125,13 +125,13 @@ void List::deleteElementByIndex(int index) {
     nextElement->prev = prevElement;
     delete searchedElement;
 
-    std::cout << "Поезд по индексу " << index + 1 << " удален!\n\n";
+    std::cout << "РџРѕРµР·Рґ РїРѕ РёРЅРґРµРєСЃСѓ " << index + 1 << " СѓРґР°Р»РµРЅ!\n\n";
     --size;
 }
 
 void List::editElementByIndex(int index) {
     if (isIndexIncorrect(index)) {
-        throw std::runtime_error("Введен некорректный индекс!\n");
+        throw std::runtime_error("Р’РІРµРґРµРЅ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РёРЅРґРµРєСЃ!\n");
     }
 
     Element *searchedElement;
@@ -143,41 +143,41 @@ void List::editElementByIndex(int index) {
     while (true) {
         system("cls");
         std::cout << *(searchedElement->train);
-        std::cout << "Какую информацию о поезде вы хотите изменить?\n"
-                  << "1) Название пункта назначения\n"
-                  << "2) Номер поезда\n"
-                  << "3) Время отправления\n";
+        std::cout << "РљР°РєСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїРѕРµР·РґРµ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ?\n"
+                  << "1) РќР°Р·РІР°РЅРёРµ РїСѓРЅРєС‚Р° РЅР°Р·РЅР°С‡РµРЅРёСЏ\n"
+                  << "2) РќРѕРјРµСЂ РїРѕРµР·РґР°\n"
+                  << "3) Р’СЂРµРјСЏ РѕС‚РїСЂР°РІР»РµРЅРёСЏ\n";
 
         int answer = checkingAccuracyOfTheInput(1, 3);
         if (answer == 1) {
-            std::cout << "\n--Введите новое название пункта назначения--\n";
+            std::cout << "\n--Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ РЅР°Р·РІР°РЅРёРµ РїСѓРЅРєС‚Р° РЅР°Р·РЅР°С‡РµРЅРёСЏ--\n";
             std::string destination = input<std::string>();
             searchedElement->train->setDestination(destination);
         } else if (answer == 2) {
-            std::cout << "\n--Введите новый номер поезда--\n";
+            std::cout << "\n--Р’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РЅРѕРјРµСЂ РїРѕРµР·РґР°--\n";
             int numberOfTheTrain = input<int>();
             searchedElement->train->setTrainNumber(numberOfTheTrain);
         } else {
-            std::cout << "\n--Введите новое время отправления--\n"
-                      << "Часы(от 0 до 23):\n";
+            std::cout << "\n--Р’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ РІСЂРµРјСЏ РѕС‚РїСЂР°РІР»РµРЅРёСЏ--\n"
+                      << "Р§Р°СЃС‹(РѕС‚ 0 РґРѕ 23):\n";
             int hours = checkingAccuracyOfTheInput(0, 23);
             searchedElement->train->setHours(hours);
-            std::cout << "Минуты(от 0 до 59):\n";
+            std::cout << "РњРёРЅСѓС‚С‹(РѕС‚ 0 РґРѕ 59):\n";
             int minutes = checkingAccuracyOfTheInput(0, 59);
             searchedElement->train->setMinutes(minutes);
         }
-        std::cout << "Информация о поезде обновлена!\n";
-        std::cout << "Желаете ли изменить еще какую-то информацию о данном поезде?(1 - да, 2 - нет)\n";
+        std::cout << "РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїРѕРµР·РґРµ РѕР±РЅРѕРІР»РµРЅР°!\n";
+        std::cout << "Р–РµР»Р°РµС‚Рµ Р»Рё РёР·РјРµРЅРёС‚СЊ РµС‰Рµ РєР°РєСѓСЋ-С‚Рѕ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РґР°РЅРЅРѕРј РїРѕРµР·РґРµ?(1 - РґР°, 2 - РЅРµС‚)\n";
         int answer1 = checkingAccuracyOfTheInput(1, 2);
         if (answer1 == 2) break;
     }
 }
 
 Element *List::searchingForElementByIndex(int index) const {
-    Element *searchedElement = first; // кладем указатель на первый элемент для прохода по всему списку
-    for (int i = 0; i < index; i++) { // поиск элемента с заданным индексом
+    Element *searchedElement = first; // РєР»Р°РґРµРј СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РїРµСЂРІС‹Р№ СЌР»РµРјРµРЅС‚ РґР»СЏ РїСЂРѕС…РѕРґР° РїРѕ РІСЃРµРјСѓ СЃРїРёСЃРєСѓ
+    for (int i = 0; i < index; i++) { // РїРѕРёСЃРє СЌР»РµРјРµРЅС‚Р° СЃ Р·Р°РґР°РЅРЅС‹Рј РёРЅРґРµРєСЃРѕРј
         searchedElement = searchedElement->next;
-    } // searchedElement - узел, который располагается в данный момент по заданному индексу
+    } // searchedElement - СѓР·РµР», РєРѕС‚РѕСЂС‹Р№ СЂР°СЃРїРѕР»Р°РіР°РµС‚СЃСЏ РІ РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ РїРѕ Р·Р°РґР°РЅРЅРѕРјСѓ РёРЅРґРµРєСЃСѓ
     return searchedElement;
 }
 
@@ -190,19 +190,19 @@ int List::getSize() const {
 }
 
 void List::swapTrains(Train *train1, Train *train2) {
-    //сохранение всех значений первого поезда
+    //СЃРѕС…СЂР°РЅРµРЅРёРµ РІСЃРµС… Р·РЅР°С‡РµРЅРёР№ РїРµСЂРІРѕРіРѕ РїРѕРµР·РґР°
     auto destination = train1->getDestination();
     auto numberOfTrain = train1->getTrainNumber();
     auto hours = train1->getHours();
     auto minutes = train1->getMinutes();
 
-    //установка значений второго поезда для первого поезда
+    //СѓСЃС‚Р°РЅРѕРІРєР° Р·РЅР°С‡РµРЅРёР№ РІС‚РѕСЂРѕРіРѕ РїРѕРµР·РґР° РґР»СЏ РїРµСЂРІРѕРіРѕ РїРѕРµР·РґР°
     train1->setDestination(train2->getDestination());
     train1->setTrainNumber(train2->getTrainNumber());
     train1->setHours(train2->getHours());
     train1->setMinutes(train2->getMinutes());
 
-    //установка значений первого поезда для второго поезда
+    //СѓСЃС‚Р°РЅРѕРІРєР° Р·РЅР°С‡РµРЅРёР№ РїРµСЂРІРѕРіРѕ РїРѕРµР·РґР° РґР»СЏ РІС‚РѕСЂРѕРіРѕ РїРѕРµР·РґР°
     train2->setDestination(destination);
     train2->setTrainNumber(numberOfTrain);
     train2->setHours(hours);
@@ -223,19 +223,19 @@ void List::bubbleSort() {
 
 void List::displayTrainsDepartingAfterACertainTime(int hours, int minutes) {
     if (isEmpty()) {
-        throw std::runtime_error("Нет поездов в списке!\n");
+        throw std::runtime_error("РќРµС‚ РїРѕРµР·РґРѕРІ РІ СЃРїРёСЃРєРµ!\n");
     }
 
-    bool flag = true; // флаг, что поезда после заданного времени отправления не были обнаружены
+    bool flag = true; // С„Р»Р°Рі, С‡С‚Рѕ РїРѕРµР·РґР° РїРѕСЃР»Рµ Р·Р°РґР°РЅРЅРѕРіРѕ РІСЂРµРјРµРЅРё РѕС‚РїСЂР°РІР»РµРЅРёСЏ РЅРµ Р±С‹Р»Рё РѕР±РЅР°СЂСѓР¶РµРЅС‹
     Element *searchedElement = first;
-    int counter = 1; // счетчик найденных поездов
+    int counter = 1; // СЃС‡РµС‚С‡РёРє РЅР°Р№РґРµРЅРЅС‹С… РїРѕРµР·РґРѕРІ
 
     for (int i = 0; i < size; i++) {
         Train *currentTrain = searchedElement->train;
         if (compareTime(currentTrain->getHours(),currentTrain->getMinutes(),
                         hours, minutes)) {
             if (flag) {
-                std::cout << "Поезда, отправляющиеся после ";
+                std::cout << "РџРѕРµР·РґР°, РѕС‚РїСЂР°РІР»СЏСЋС‰РёРµСЃСЏ РїРѕСЃР»Рµ ";
                 if (hours < 10) std::cout << "0";
                 std::cout << hours << ":";
 
@@ -250,7 +250,7 @@ void List::displayTrainsDepartingAfterACertainTime(int hours, int minutes) {
     }
 
     if (flag) {
-        std::cout << "Поезда, отправляющиеся после " << hours << ":" << minutes << ", не были найдены в списке!\n";
+        std::cout << "РџРѕРµР·РґР°, РѕС‚РїСЂР°РІР»СЏСЋС‰РёРµСЃСЏ РїРѕСЃР»Рµ " << hours << ":" << minutes << ", РЅРµ Р±С‹Р»Рё РЅР°Р№РґРµРЅС‹ РІ СЃРїРёСЃРєРµ!\n";
     }
 }
 

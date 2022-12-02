@@ -17,7 +17,7 @@ void Train::setTrainNumber(int trainNumber) {
 }
 
 Train::Train() {
-    std::cout << "Âûçâàí êîíñòğóêòîğ áåç ïàğàìåòğîâ äëÿ êëàññà Train\n\n";
+    std::cout << "Ğ’Ñ‹Ğ·Ğ²Ğ°Ğ½ ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ Ğ±ĞµĞ· Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ğ¾Ğ² Ğ´Ğ»Ñ ĞºĞ»Ğ°ÑÑĞ° Train\n\n";
     destination = "";
     trainNumber = 0;
     hours = 0;
@@ -25,7 +25,7 @@ Train::Train() {
 }
 
 Train::Train(const std::string &destination, int trainNumber, int hours, int minutes) {
-    std::cout << "Âûçâàí êîíñòğóêòîğ ñ ïàğàìåòğàìè äëÿ êëàññà Train\n\n";
+    std::cout << "Ğ’Ñ‹Ğ·Ğ²Ğ°Ğ½ ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ Ñ Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ğ°Ğ¼Ğ¸ Ğ´Ğ»Ñ ĞºĞ»Ğ°ÑÑĞ° Train\n\n";
     this->destination = destination;
     this->trainNumber = trainNumber;
     this->hours = hours;
@@ -33,7 +33,7 @@ Train::Train(const std::string &destination, int trainNumber, int hours, int min
 }
 
 Train::Train(const Train &train2) {
-    std::cout << "Âûçâàí êîíñòğóêòîğ êîïèğîâàíèÿ äëÿ êëàññà Train\n\n";
+    std::cout << "Ğ’Ñ‹Ğ·Ğ²Ğ°Ğ½ ĞºĞ¾Ğ½ÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ ĞºĞ¾Ğ¿Ğ¸Ñ€Ğ¾Ğ²Ğ°Ğ½Ğ¸Ñ Ğ´Ğ»Ñ ĞºĞ»Ğ°ÑÑĞ° Train\n\n";
     destination = train2.destination;
     trainNumber = train2.trainNumber;
     hours = train2.hours;
@@ -41,29 +41,29 @@ Train::Train(const Train &train2) {
 }
 
 Train::~Train() {
-    std::cout << "Âûçâàí äåñòğóêòîğ äëÿ êëàññà Train\n\n";
+    std::cout << "Ğ’Ñ‹Ğ·Ğ²Ğ°Ğ½ Ğ´ĞµÑÑ‚Ñ€ÑƒĞºÑ‚Ğ¾Ñ€ Ğ´Ğ»Ñ ĞºĞ»Ğ°ÑÑĞ° Train\n\n";
 }
 
 std::istream &operator>>(std::istream &is, Train &train) {
-    std::cout << "Ââåäèòå íàçâàíèå ïóíêòà íàçíà÷åíèÿ\n";
+    std::cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ°Ğ·Ğ²Ğ°Ğ½Ğ¸Ğµ Ğ¿ÑƒĞ½ĞºÑ‚Ğ° Ğ½Ğ°Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ñ\n";
     train.setDestination(input<std::string>());
 
-    std::cout << "\nÂâåäèòå íîìåğ ïîåçäà\n";
+    std::cout << "\nĞ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ½Ğ¾Ğ¼ĞµÑ€ Ğ¿Ğ¾ĞµĞ·Ğ´Ğ°\n";
     train.setTrainNumber(input<int>());
 
-    std::cout << "\nÂâåäèòå âğåìÿ îòïğàâëåíèÿ ïîåçäà\n"
-              << "×àñû(îò 0 äî 23)\n";
+    std::cout << "\nĞ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ²Ñ€ĞµĞ¼Ñ Ğ¾Ñ‚Ğ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ¸Ñ Ğ¿Ğ¾ĞµĞ·Ğ´Ğ°\n"
+              << "Ğ§Ğ°ÑÑ‹(Ğ¾Ñ‚ 0 Ğ´Ğ¾ 23)\n";
     train.setHours(checkingAccuracyOfTheInput(0, 23));
 
-    std::cout << "\nÌèíóòû(îò 0 äî 59)\n";
+    std::cout << "\nĞœĞ¸Ğ½ÑƒÑ‚Ñ‹(Ğ¾Ñ‚ 0 Ğ´Ğ¾ 59)\n";
     train.setMinutes(checkingAccuracyOfTheInput(0, 59));
 
     return is;
 }
 
 std::ostream &operator<<(std::ostream &os, const Train &train) {
-    std::cout << "Ïóíêò íàçíà÷åíèÿ: " << train.getDestination() << "\nÍîìåğ ïîåçäà: " << train.getTrainNumber()
-              << "\nÂğåìÿ îòïğàâëåíèÿ: ";
+    std::cout << "ĞŸÑƒĞ½ĞºÑ‚ Ğ½Ğ°Ğ·Ğ½Ğ°Ñ‡ĞµĞ½Ğ¸Ñ: " << train.getDestination() << "\nĞĞ¾Ğ¼ĞµÑ€ Ğ¿Ğ¾ĞµĞ·Ğ´Ğ°: " << train.getTrainNumber()
+              << "\nĞ’Ñ€ĞµĞ¼Ñ Ğ¾Ñ‚Ğ¿Ñ€Ğ°Ğ²Ğ»ĞµĞ½Ğ¸Ñ: ";
     if (train.getHours() < 10) std::cout << "0";
     std::cout << train.getHours() << ":";
 
