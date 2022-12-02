@@ -119,7 +119,7 @@ void Sailboat::readFromFile(std::fstream &file) {
 
 void Sailboat::editData() {
     while (true) {
-        system("cls");
+        system("clear");
         displayData();
         std::cout << "Какую информацию о паруснике вы хотите изменить?\n";
         std::cout << "1) Тип парусника\n"

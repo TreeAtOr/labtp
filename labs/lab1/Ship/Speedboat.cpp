@@ -103,7 +103,7 @@ void Speedboat::readFromFile(std::fstream &file) {
 
 void Speedboat::editData() {
     while (true) {
-        system("cls");
+        system("clear");
         displayData();
         std::cout << "Какую информацию о катере вы хотите изменить?\n";
         std::cout << "1) Назначение\n"

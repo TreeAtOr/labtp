@@ -79,7 +79,7 @@ void Menu::startProgram() const {
       }
       case 7:
         std::cout << "Выход из программы..\n";
-        system("pause");
+        system("read -p \"Нажмите любую клавишу чтобы продолжить ...\"");
         exit(1);
       default:
         std::cout << "Введена неверная цифра! Повторите попытку.\n";
@@ -90,7 +90,7 @@ void Menu::startProgram() const {
         std::cout << "Программа сброшена до начального состояния!\n\n";
       }
     }
-    system("pause");
+    system("read -p \"Нажмите любую клавишу чтобы продолжить ...\"");
   }
 }
 

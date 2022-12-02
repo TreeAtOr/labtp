@@ -116,7 +116,7 @@ void Submarine::readFromFile(std::fstream &file) {
 
 void Submarine::editData() {
     while (true) {
-        system("cls");
+        system("clear");
         displayData();
         std::cout << "Какую информацию о подводной лодке вы хотите изменить?\n";
         std::cout << "1) Экипаж\n"

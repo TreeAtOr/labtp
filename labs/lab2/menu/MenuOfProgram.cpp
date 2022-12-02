@@ -19,14 +19,14 @@ void MenuOfProgram::startProgram() {
     else if (answer == 2) secondEx();
     else {
         std::cout << "Выход из программы..\n";
-        system("pause");
+        system("read -p \"Нажмите любую клавишу чтобы продолжить ...\"");
         exit(1);
     }
 }
 
 void MenuOfProgram::firstEx() {
     while (true) {
-        system("cls");
+        system("clear");
         std::cout << "1) Добавить поезд в список\n"
                   << "2) Изменить информацию о поезде\n"
                   << "3) Удалить поезд из списка\n"
@@ -35,7 +35,7 @@ void MenuOfProgram::firstEx() {
                   << "6) Перейти ко второму заданию\n"
                   << "7) Выйти из программы\n";
         int answer = input<int>();
-        system("cls");
+        system("clear");
         switch (answer) {
             case 1: {
                 std::cout << "---Добавление поезда---\n";
@@ -103,7 +103,7 @@ void MenuOfProgram::firstEx() {
                 secondEx();
             case 7: {
                 std::cout << "Выход из программы..\n";
-                system("pause");
+                system("read -p \"Нажмите любую клавишу чтобы продолжить ...\"");
                 exit(1);
             }
             default: {
@@ -111,14 +111,14 @@ void MenuOfProgram::firstEx() {
             }
         }
 
-        system("pause");
+        system("read -p \"Нажмите любую клавишу чтобы продолжить ...\"");
     }
 }
 
 void MenuOfProgram::secondEx() {
     while (true) {
         try {
-            system("cls");
+            system("clear");
             std::cout << "Программа находит слова, состоящие не более, чем из 4 букв\n";
             std::cout << "1) Считывать информацию из файла\n"
                       << "2) Выход из программы\n";
@@ -130,13 +130,13 @@ void MenuOfProgram::secondEx() {
                 TextAnalysis::readFromFile(nameOfFile);
             } else {
                 std::cout << "Выход из программы..\n";
-                system("pause");
+                system("read -p \"Нажмите любую клавишу чтобы продолжить ...\"");
                 exit(1);
             }
         } catch (std::runtime_error &e) {
             std::cout << "\n" << e.what() << "\n";
         }
 
-        system("pause");
+        system("read -p \"Нажмите любую клавишу чтобы продолжить ...\"");
     }
 }

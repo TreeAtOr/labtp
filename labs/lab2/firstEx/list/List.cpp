@@ -141,7 +141,7 @@ void List::editElementByIndex(int index) {
     else searchedElement = searchingForElementByIndex(index);
 
     while (true) {
-        system("cls");
+        system("clear");
         std::cout << *(searchedElement->train);
         std::cout << "Какую информацию о поезде вы хотите изменить?\n"
                   << "1) Название пункта назначения\n"
